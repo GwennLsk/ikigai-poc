@@ -1,0 +1,18 @@
+<div class="connexionPage">
+  <form [formGroup]="form">
+    <fieldset>
+      <legend>Login:</legend>
+      <div class="form-field">
+        <label for="email" class="me-2">Email: </label>
+        <input type="text" name="email" id="email" formControlName="email">
+      </div>
+      <div class="form-field mt-2">
+        <label for="password" class="me-2">Mot de Passe: </label>
+        <input type="password" name="password" id="password" formControlName="password">
+      </div>
+    </fieldset>
+    <div class="form-buttons mt-2">
+      <button (click)="login()">Connexion</button>
+    </div>
+  </form>
+</div>

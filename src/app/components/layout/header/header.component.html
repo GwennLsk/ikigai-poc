@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light position-fixed w-100  header">
+  <h1 class=" ms-4 d-flex align-content-center">
+    <a routerLink="" class="navbar-brand ">Ikigai</a>
+  </h1>
+  <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a routerLink="/profile" class="nav-link">Mon profil</a>
+      </li>
+    </ul>
+    <a routerLink="/connexion" class="nav-link" *ngIf="!auth">Connexion</a>
+    <button *ngIf="auth" (click)="disconnect()">Déconnexion</button>
+  </div>
+</nav>

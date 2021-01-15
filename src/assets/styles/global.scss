@@ -1,0 +1,21 @@
+.separator {
+  height: 3px;
+  background-color: var(--purple);
+  margin: 20px 0;
+}
+
+
+.carousel-item {
+  display: block !important;
+  z-index: 1;
+  position: absolute;
+  transition: opacity 1s ease-in-out, visibility 1s;
+  opacity: 0;
+  visibility: hidden;
+}
+.carousel-item.active {
+  position: relative;
+  transition: opacity 1s ease-in-out, visibility 1s;
+  visibility: visible;
+  opacity: 1;
+}

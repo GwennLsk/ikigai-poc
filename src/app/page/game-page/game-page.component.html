@@ -1,0 +1,45 @@
+<div class="container-fluid gamePage" *ngIf="game">
+  <h2>{{game.name}}</h2>
+  <div class="tags container-fluid">
+    <div *ngFor="let tag of game.tags" class="badge bg-light text-dark mx-2 mb-3">{{tag}}</div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        <ngb-carousel #carousel [interval]="0" [animation]="false">
+          <ng-template ngbSlide *ngFor="let img of game.images; let i = index">
+            <div class="slide">
+              <img [src]="img" alt="" class="img-slide">
+            </div>
+            <div class="carousel-caption"></div>
+          </ng-template>
+        </ngb-carousel>
+        <div class="slider-nav container-fluid mt-2 ">
+            <button class="button col" *ngFor="let img of game.images; let i = index" (click)="carousel.select('ngb-slide-'+i)">
+              <img src="{{img}}" alt="" class="btn-img">
+            </button>
+        </div>
+      </div>
+      <div class="col ms-4">
+        <div class="cover mb-3">
+          <img src="{{game.vignette}}" alt="">
+        </div>
+        <p>{{game.short}}</p>
+        <div class="card p-3">
+          <p > <span class="fw-bold">Genre: </span> <span *ngFor="let genre of game.genre; let i=index">{{genre}}{{(i< game.genre.length -1 ) ? "," : null}}</span> </p>
+          <p><span class="fw-bold">Date de parution: </span>{{game.parution | date:"dd MMMM yyyy":"+0200":"fr"}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="separator"></div>
+    <div class="description">
+      <p>{{game.description}}</p>
+      <br>
+      <div class="links" *ngIf="game.resources">
+        <p class="fw-bold">Pour plus d'informations:</p>
+        <a *ngFor="let link of game.resources" href="{{link.url}}">{{link.title}}</a>
+      </div>
+    </div>
+  </div>
+</div>

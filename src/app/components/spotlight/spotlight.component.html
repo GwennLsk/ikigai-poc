@@ -1,0 +1,25 @@
+<div class="spotlight" *ngIf="game">
+  <h2 class="text-uppercase">En vedette</h2>
+  <div class="game mt-3 container-fluid">
+    <div class="row">
+      <div class="col image">
+        <a routerLink="/game/{{game.id}}">
+          <img src="{{game.vignette}}" alt="" class="vignette">
+        </a>
+      </div>
+      <div class="col description">
+        <h3 class="my-2">{{game.name}}</h3>
+        <p [innerHTML]="game.description"></p>
+        <div class="tags d-flex">
+          <ul>
+            <li *ngFor="let tag of game.tags" class="badge bg-light text-dark mx-1">{{tag}}</li>
+          </ul>
+        </div>
+        <div class="links mb-3" *ngIf="game.resources">
+          <p class="fw-bold">Pour plus d'informations:</p>
+          <a *ngFor="let link of game.resources" href="{{link.url}}">{{link.title}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

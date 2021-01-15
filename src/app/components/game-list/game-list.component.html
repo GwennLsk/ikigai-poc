@@ -1,0 +1,9 @@
+<div class="gameList">
+  <h2 class="text-uppercase">Nos jeux</h2>
+
+  <div class="list container-fluid">
+    <div class="row row-cols-4 gx-2">
+      <app-game-card *ngFor="let game of gameList" [game]="game"></app-game-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+.gamePage {
+  .carousel {
+    width: 700px;
+    .slide {
+      width: 100%;
+      .img-slide {
+        width: 100%;
+      }
+    }
+  }
+  .slider-nav {
+    .button {
+      border: none;
+    }
+    .btn-img {
+      width: 100px;
+    }
+  }
+  .cover {
+    img {
+      width: 250px;
+    }
+  }
+}

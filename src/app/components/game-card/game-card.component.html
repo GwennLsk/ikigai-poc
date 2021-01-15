@@ -1,0 +1,14 @@
+<div class="gameCard card mb-2">
+  <a routerLink="/game/{{game.id}}">
+    <div class="image">
+      <img src="{{game.vignette}}" alt="{{game.name}}" class="card-img-top">
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">{{game.name}}</h3>
+      <p class="card-text">{{game.short}}</p>
+      <div class="tags">
+        <div class="badge bg-light text-dark mx-1" *ngFor="let tag of game.tags | slice:0:3">{{tag}}</div>
+      </div>
+    </div>
+  </a>
+</div>
